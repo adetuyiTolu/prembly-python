@@ -347,7 +347,7 @@ class TestPrembly:
     def test_validate_headers(self) -> None:
         client = Prembly(base_url=base_url, api_key=api_key, _strict_response_validation=True)
         request = client._build_request(FinalRequestOptions(method="get", url="/foo"))
-        assert request.headers.get("Authorization") == api_key
+        assert request.headers.get("x-api-key") == api_key
 
         with pytest.raises(PremblyError):
             with update_env(**{"PREMBLY_API_KEY": Omit()}):
@@ -1170,7 +1170,7 @@ class TestAsyncPrembly:
     def test_validate_headers(self) -> None:
         client = AsyncPrembly(base_url=base_url, api_key=api_key, _strict_response_validation=True)
         request = client._build_request(FinalRequestOptions(method="get", url="/foo"))
-        assert request.headers.get("Authorization") == api_key
+        assert request.headers.get("x-api-key") == api_key
 
         with pytest.raises(PremblyError):
             with update_env(**{"PREMBLY_API_KEY": Omit()}):
