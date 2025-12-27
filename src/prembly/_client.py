@@ -115,7 +115,7 @@ class Prembly(SyncAPIClient):
     @override
     def auth_headers(self) -> dict[str, str]:
         api_key = self.api_key
-        return {"Authorization": api_key}
+        return {"x-api-key": api_key}
 
     @property
     @override
@@ -289,7 +289,7 @@ class AsyncPrembly(AsyncAPIClient):
     @override
     def auth_headers(self) -> dict[str, str]:
         api_key = self.api_key
-        return {"Authorization": api_key}
+        return {"x-api-key": api_key}
 
     @property
     @override
