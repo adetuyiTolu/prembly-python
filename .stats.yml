@@ -1,0 +1,4 @@
+configured_endpoints: 1
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/prembly-inc%2Fprembly-da23edb056970b3d67364fe25ed3b18b242b79b831de3dc5442056fe9d7dfc25.yml
+openapi_spec_hash: 68c20bada769891b50ec608ed7d94fcf
+config_hash: 54ee05d124db3df708d4e63241d753e8
