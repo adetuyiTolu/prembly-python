@@ -17,7 +17,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestVerification:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_verify_nin(self, client: Prembly) -> None:
         verification = client.verification.verify_nin(
@@ -25,7 +25,7 @@ class TestVerification:
         )
         assert_matches_type(VerificationVerifyNinResponse, verification, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_verify_nin(self, client: Prembly) -> None:
         response = client.verification.with_raw_response.verify_nin(
@@ -37,7 +37,7 @@ class TestVerification:
         verification = response.parse()
         assert_matches_type(VerificationVerifyNinResponse, verification, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_verify_nin(self, client: Prembly) -> None:
         with client.verification.with_streaming_response.verify_nin(
@@ -57,7 +57,7 @@ class TestAsyncVerification:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_verify_nin(self, async_client: AsyncPrembly) -> None:
         verification = await async_client.verification.verify_nin(
@@ -65,7 +65,7 @@ class TestAsyncVerification:
         )
         assert_matches_type(VerificationVerifyNinResponse, verification, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_verify_nin(self, async_client: AsyncPrembly) -> None:
         response = await async_client.verification.with_raw_response.verify_nin(
@@ -77,7 +77,7 @@ class TestAsyncVerification:
         verification = await response.parse()
         assert_matches_type(VerificationVerifyNinResponse, verification, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_verify_nin(self, async_client: AsyncPrembly) -> None:
         async with async_client.verification.with_streaming_response.verify_nin(
